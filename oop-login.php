@@ -1,6 +1,6 @@
 <?php
 include("koneksi.php");
-
+//Ermila                                                                                                           
 class User
 {
     protected $password;
@@ -30,12 +30,21 @@ class UserManager extends User
         $queri = mysqli_query($this->conn, "INSERT INTO tb_user (fullname, username, password) VALUES ('$this->fullname','$this->username','$hashedPassword')");
         return $queri;
     }
+}//Jawaban nomor 2,3
+class UserAdmin extends User implements Authentic
+{
+    Protected $conn;
+    public $username;
+    public function_construct($password, $username, $fullname);
+    $this->conn = $conn;
+
 }
+
 
 // extends itu inhweitance
 class Login extends User
 {
-    protected $conn;
+    protected $conn;//encapsulation
     public function __construct($conn, $username, $password)
     {
         parent::__construct($username, $password, '');
